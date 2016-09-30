@@ -1,9 +1,9 @@
 # mybatis-generator-plugins
 mybatis generator 自定义插件
 
-> LombokPlugin 增加对lombok的支持
+> LombokPlugin 增加对lombok的支持  
 > ExtPlugin model,dao,xml 都会生成一个对应的 xxxExt.java OR xxxExt.xml，它们与原生文件是继承关系，这些扩展文件只会生成一次，原生文件每运行一
-次就生成一次，这样的好处是，你把sql或者配置写到扩展文件里面，以后数据表变了代码不用改
+次就生成一次，这样的好处是，你把sql或者配置写到扩展文件里面，以后数据表变了代码不用改  
 
 
 - pom.xml
