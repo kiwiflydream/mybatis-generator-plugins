@@ -15,12 +15,15 @@ import java.sql.Types;
  * 时间：2016-09-30 16:22
  * 作者：Mr.Kiwi
  */
+@Deprecated
 public class JavaTypeResolveExt extends JavaTypeResolverDefaultImpl {
 
     public JavaTypeResolveExt() {
 
         super();
-        super.typeMap.put(Types.BIT, new JdbcTypeInformation("BIT", //$NON-NLS-1$
+        super.typeMap.put(Types.BIT, new JdbcTypeInformation("INTEGER", //$NON-NLS-1$
+            new FullyQualifiedJavaType(Integer.class.getName())));
+        super.typeMap.put(Types.TINYINT, new JdbcTypeInformation("INTEGER", //$NON-NLS-1$
             new FullyQualifiedJavaType(Integer.class.getName())));
     }
 }

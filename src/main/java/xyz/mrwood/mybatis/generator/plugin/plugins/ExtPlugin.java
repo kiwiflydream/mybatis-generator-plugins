@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * 项目：mybatis-generator-plugin
  * 包名：xyz.mrwood.mybatis.generator.plugin.plugins
- * 功能：
+ * 功能：类型转换
  * 时间：2016-07-03 18:24
  * 作者：Mr.Kiwi
  */
