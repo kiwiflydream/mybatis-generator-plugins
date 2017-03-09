@@ -9,28 +9,41 @@ mybatis generator 自定义插件
 - pom.xml
 ``` xml
 	<!--mybatis生成代码插件-->
-			<plugin>
-				<groupId>org.mybatis.generator</groupId>
-				<artifactId>mybatis-generator-maven-plugin</artifactId>
-				<version>1.3.2</version>
-				<configuration>
-					<verbose>true</verbose>
-					<overwrite>true</overwrite>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>xyz.mrwood.mybatis.generator.plugin</groupId>
-						<artifactId>mybatis-generator-plugin</artifactId>
-						<version>1.0-SNAPSHOT</version>
-					</dependency>
-				</dependencies>
-			</plugin>
+        <plugin>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-maven-plugin</artifactId>
+            <version>1.3.2</version>
+            <configuration>
+                <verbose>true</verbose>
+                <overwrite>true</overwrite>
+            </configuration>
+            <dependencies>
+                <dependency>
+                    <groupId>xyz.mrwood.mybatis.generator.plugin</groupId>
+                    <artifactId>mybatis-generator-plugin</artifactId>
+                    <version>1.0-SNAPSHOT</version>
+                </dependency>
+            </dependencies>
+        </plugin>
 ```
 
 - generatorConfig.xml
 ``` xml
-<!-- 集成lombok -->
-<plugin type="xyz.mrwood.mybatis.generator.plugin.plugins.LombokPlugin"/>
-<!--生成拓展类-->
-<plugin type="xyz.mrwood.mybatis.generator.plugin.plugins.ExtPlugin" />
+    <!-- 集成lombok -->
+    <plugin type="xyz.mrwood.mybatis.generator.plugin.plugins.LombokPlugin"/>
+    <!--生成拓展类-->
+    <plugin type="xyz.mrwood.mybatis.generator.plugin.plugins.ExtPlugin" />
+```
+
+
+- 添加配置支持
+``` xml
+    <!-- 去除生成文件前缀 -->
+    <property name="classRemovePrefix" value="Lp"/>
+    <!-- 生成扩展类与xml的后缀 -->
+    <property name="extClassSuffix" value="Ext"/>
+    <!-- 给扩展类添加注解 -->
+    <property name="extClassAddAnno" value="@Mapper"/>
+    <!-- 给扩展类添加注解需要导入的类(import) -->
+    <property name="extClassAddAnnoClass" value="org.apache.ibatis.annotations.Mapper"/>
 ```
