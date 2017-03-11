@@ -46,4 +46,18 @@ mybatis generator 自定义插件
     <property name="extClassAddAnno" value="@Mapper"/>
     <!-- 给扩展类添加注解需要导入的类(import) -->
     <property name="extClassAddAnnoClass" value="org.apache.ibatis.annotations.Mapper"/>
+    <!--每个字段添加数据库字段注释-->
+    <plugin type="xyz.mrwood.mybatis.generator.plugin.plugins.CommentPlugin" />
+```
+
+- property
+``` xml
+<!--去除生成的类的前缀-->
+<property name="classRemovePrefix" value="Lp"/>
+<!--指定扩展类的后缀，默认是Ext-->
+<property name="extClassSuffix" value="Ext"/>
+<!--添加扩展类的注解-->
+<property name="extClassAddAnno" value="@Mapper"/>
+<!--添加扩展类的导入类,就是import信息-->
+<property name="extClassAddAnnoClass" value="org.apache.ibatis.annotations.Mapper"/>
 ```
